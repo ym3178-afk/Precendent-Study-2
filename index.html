@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Precedent Archive | Real HTML</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ead2a8;--paper:#f7e9cf;--paper-light:#fff5df;--ink:#2b2117;--muted:#6b5438;
+  --brown:#8b5a22;--gold:#c9923c;--line:rgba(73,48,21,.28);--shadow:rgba(54,34,13,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:"Cormorant Garamond",serif;
+  background:
+    radial-gradient(circle at 12% 10%,rgba(255,255,255,.65),transparent 24%),
+    radial-gradient(circle at 80% 90%,rgba(125,79,25,.13),transparent 30%),
+    linear-gradient(120deg,#f8ecd7 0%,#ecd1a2 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.24;
+  background-image:radial-gradient(rgba(48,35,18,.28) .55px,transparent .75px);
+  background-size:5px 5px;mix-blend-mode:multiply;
+}
+.archive{position:relative;z-index:1;width:min(1280px,96vw);margin:24px auto 60px}
+.page{
+  position:relative;display:grid;grid-template-columns:225px 1fr;gap:34px;
+  min-height:650px;margin-bottom:34px;border:1px solid var(--line);border-radius:14px;
+  background:
+    linear-gradient(90deg,rgba(119,74,24,.15),transparent 17%),
+    linear-gradient(135deg,rgba(255,248,229,.95),rgba(239,216,176,.92));
+  box-shadow:0 22px 55px var(--shadow);overflow:hidden;
+}
+.page:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 80px rgba(92,57,21,.16)}
+.sidebar{position:relative;padding:34px 22px;border-right:2px solid rgba(80,52,22,.18);background:rgba(227,196,143,.28)}
+.logo{
+  height:86px;margin-bottom:10px;opacity:.8;
+  background:
+  linear-gradient(90deg,transparent 12%,#493720 12% 15%,transparent 15% 24%,#493720 24% 27%,transparent 27% 36%,#493720 36% 39%,transparent 39%),
+  linear-gradient(#493720,#493720) 35px 54px/112px 4px no-repeat,
+  linear-gradient(#493720,#493720) 47px 24px/86px 4px no-repeat;
+}
+.brand{text-align:center;font-size:20px;letter-spacing:.06em;line-height:1.1;font-weight:700}
+.brand small{display:block;margin-top:5px;font-weight:400;color:var(--muted);font-size:15px}
+.rule{width:92px;height:1px;background:var(--line);margin:20px auto;position:relative}
+.rule:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:#7b5529;transform:translate(-50%,-50%)}
+.nav{display:grid;gap:13px;margin-top:25px}
+.nav a{
+  display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;padding:13px 11px;
+  color:inherit;text-decoration:none;border-radius:7px;transition:.2s
+}
+.nav a:hover,.nav a.active{background:rgba(217,164,76,.34);box-shadow:0 9px 18px rgba(85,54,20,.12);transform:translateX(3px)}
+.ico{font-size:32px}.num{font-size:25px;color:#805321;line-height:1}.label{font-size:15px;text-transform:uppercase;font-weight:700}.desc{font-size:13px;color:var(--muted);line-height:1.15}
+.note{
+  position:absolute;left:42px;bottom:38px;width:120px;padding:17px 13px;background:rgba(255,239,201,.52);
+  font-family:"Caveat",cursive;font-size:20px;line-height:1.05;transform:rotate(-4deg);box-shadow:0 9px 18px rgba(68,43,16,.12)
+}
+.content{position:relative;padding:40px 36px 34px}
+.hand{font-family:"Caveat",cursive;font-size:25px;color:#6c5539;margin-bottom:6px}
+h1,h2{margin:0;color:#21170e}h1{font-size:52px;line-height:.98}h2{font-size:44px;line-height:1.02}
+.subtitle{font-size:27px;color:#9a641d;font-style:italic;margin:6px 0 14px}.author{font-size:21px;font-weight:700;margin-bottom:22px}
+.clip{position:absolute;right:22px;top:18px;font-size:50px;color:rgba(73,52,26,.55);transform:rotate(10deg)}
+.stamp{position:absolute;right:330px;top:42px;width:92px;height:92px;border:2px solid rgba(82,60,34,.44);border-radius:50%;display:grid;place-items:center;font-size:27px;color:rgba(82,60,34,.58);transform:rotate(14deg)}
+.grid{display:grid;grid-template-columns:1.04fr 1fr;gap:28px;align-items:start}
+.paper{
+  position:relative;background:rgba(255,242,214,.64);border:1px solid rgba(92,60,26,.2);
+  padding:24px 26px;box-shadow:0 14px 28px rgba(69,44,18,.11)
+}
+.paper:before{content:"";position:absolute;left:-15px;top:18px;width:106px;height:28px;background:rgba(209,166,92,.38);transform:rotate(-12deg)}
+.paper-title{font-family:"Patrick Hand",cursive;text-transform:uppercase;font-size:18px;display:inline-block;border-bottom:2px solid rgba(126,83,34,.3);margin-bottom:12px}
+p{font-size:17px;line-height:1.42;margin:0 0 14px}
+.bullets{display:grid;gap:13px;margin-top:18px}.bullet{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:17px;line-height:1.25}
+mark{background:rgba(209,151,54,.35);color:inherit;padding:0 4px}
+.map{position:relative;min-height:245px;border-radius:6px;background:radial-gradient(circle at 55% 50%,transparent 0 4px,rgba(56,43,28,.22) 5px,transparent 6px),repeating-linear-gradient(30deg,transparent 0 18px,rgba(79,58,35,.08) 19px 20px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(79,58,35,.06) 39px 40px)}
+.river{position:absolute;left:19%;top:15%;width:56%;height:70%;border-left:5px double rgba(42,35,25,.48);border-radius:52% 42% 50% 46%;transform:rotate(23deg)}
+.polaroid{position:absolute;right:18px;top:17px;width:230px;padding:12px 12px 34px;background:#f3dfba;box-shadow:0 16px 26px rgba(60,38,16,.22);transform:rotate(7deg)}
+.polaroid:before{content:"";position:absolute;top:-10px;left:50%;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#d9a94e,#6e4113);box-shadow:0 4px 9px rgba(0,0,0,.25)}
+.photo{height:130px;background:linear-gradient(160deg,#69704c,#b98f53 45%,#2f3f35 46%,#7a5c36 70%);position:relative;overflow:hidden}
+.photo:after{content:"";position:absolute;left:-22px;right:-20px;top:58px;height:36px;border-radius:50%;background:rgba(232,218,181,.82);transform:rotate(-12deg)}
+.caption{font-family:"Caveat",cursive;font-size:20px;margin-top:8px;color:#6b5134}
+.table-wrap{margin-top:24px;overflow:auto}
+table{width:100%;border-collapse:collapse;background:rgba(255,238,202,.44)}
+th,td{border:1px solid rgba(87,61,32,.22);padding:12px;text-align:left;vertical-align:top}
+th{font-family:"Patrick Hand",cursive;text-transform:uppercase;font-size:15px;background:rgba(222,185,115,.30)}
+td{font-size:15px;line-height:1.25}
+a{color:#855316;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(133,83,22,.36)}
+.two{display:grid;grid-template-columns:1fr 1.18fr;gap:26px}
+.studio-photo{position:absolute;right:42px;top:95px;width:230px;padding:12px 12px 34px;background:#f2dfbc;box-shadow:0 14px 26px rgba(59,38,16,.18);transform:rotate(6deg)}
+.studio-photo:before{content:"";position:absolute;top:-10px;left:50%;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#d7a64d,#6f4214)}
+.studio-img{height:135px;background:repeating-linear-gradient(90deg,#6b5942 0 10px,#d2bb8f 10px 20px);filter:sepia(.55)}
+.timeline{margin-top:20px;padding:20px 24px;background:rgba(255,236,198,.5);border:1px solid rgba(87,61,32,.18)}
+.time-row{display:grid;grid-template-columns:95px 1fr;gap:14px;padding:7px 0;border-left:2px dotted rgba(88,60,29,.35)}
+.time-row b{padding-left:20px}
+.inline-left{width:42%;display:inline-block;vertical-align:top}.inline-right{width:55%;display:inline-block;vertical-align:top;margin-left:2%}
+.ref{display:grid;grid-template-columns:280px 1fr;gap:28px}
+.focus-list{display:grid;gap:16px}.focus{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;font-size:16px}
+.methods{grid-column:1/-1;margin-top:18px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:18px;background:rgba(255,238,204,.42);border:1px solid rgba(90,63,33,.18)}
+.method{text-align:center;font-size:13px}.method span{display:block;font-size:26px;margin-bottom:4px}
+
+/* Fixed Page 2: same density/proportion as Page 1 and Page 3 */
+.author-page .content{display:grid;grid-template-rows:auto auto 1fr auto;gap:18px;}
+.author-top{display:grid;grid-template-columns:1fr 1.15fr 240px;gap:24px;align-items:start;}
+.author-main{display:grid;grid-template-columns:42% 1fr;gap:24px;align-items:stretch;}
+.author-main .timeline{margin-top:0;height:100%;min-height:430px;}
+.author-main .timeline .time-row{padding:12px 0;}
+.author-biblio table td{font-size:14px;}
+.author-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:0;}
+.research-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.step{text-align:center;border:1px solid rgba(87,61,32,.18);background:rgba(255,239,204,.36);padding:12px 10px;min-height:96px;}
+.step .step-icon{font-size:28px;display:block;margin-bottom:6px;}
+.step b{display:block;font-size:13px;letter-spacing:.04em;}
+.step span{font-size:13px;color:var(--muted);}
+.tags{display:flex;flex-wrap:wrap;gap:9px;}
+.tag{font-family:"Patrick Hand",cursive;font-size:16px;padding:6px 10px;background:rgba(211,151,54,.28);border:1px solid rgba(124,82,33,.18);border-radius:999px;}
+.author-photo-card{position:relative;width:100%;padding:12px 12px 34px;background:#f2dfbc;box-shadow:0 14px 26px rgba(59,38,16,.18);transform:rotate(5deg);}
+.author-photo-card:before{content:"";position:absolute;top:-10px;left:50%;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#d7a64d,#6f4214);}
+.author-photo-card .studio-img{height:138px;}
+@media(max-width:1050px){.author-top,.author-main,.author-bottom{grid-template-columns:1fr}.author-main .timeline{min-height:auto}.research-steps{grid-template-columns:repeat(2,1fr)}}
+
+@media(max-width:900px){
+  .page{grid-template-columns:1fr}.sidebar{display:none}.content{padding:28px 18px}.grid,.two,.ref{grid-template-columns:1fr}
+  .polaroid,.studio-photo{position:relative;right:auto;top:auto;margin-top:18px}.stamp{display:none}
+  .inline-left,.inline-right{width:100%;display:block;margin:18px 0 0}.methods{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ===== Clean Page 2 rebuild: no overlap, no extra modules, 3:2 proportion ===== */
+.archive{
+  width:min(1280px,96vw);
+}
+
+.page{
+  aspect-ratio:3/2;
+  min-height:unset;
+}
+
+.author-page .content{
+  display:grid;
+  grid-template-rows:82px 190px 118px 1fr;
+  gap:18px;
+  overflow:hidden;
+  padding:38px 36px 34px;
+}
+
+.author-header-clean h2{
+  margin-bottom:4px;
+}
+
+.author-header-clean .hand{
+  margin:0;
+  font-size:22px;
+}
+
+.author-info-row{
+  display:grid;
+  grid-template-columns:1.08fr 1.1fr 220px;
+  gap:22px;
+  align-items:stretch;
+  min-height:0;
+}
+
+.author-about-card{
+  padding:20px 22px;
+}
+
+.author-about-card p{
+  font-size:16px;
+  line-height:1.34;
+  margin-bottom:10px;
+}
+
+.author-core-card{
+  background:rgba(255,242,214,.56);
+  border:1px solid rgba(92,60,26,.2);
+  padding:18px 20px;
+  box-shadow:0 14px 28px rgba(69,44,18,.09);
+  overflow:hidden;
+}
+
+.author-core-card table th,
+.author-core-card table td{
+  font-size:13px;
+  padding:7px 9px;
+}
+
+.author-photo-compact{
+  position:relative;
+  width:100%;
+  padding:10px 10px 28px;
+  transform:rotate(3deg);
+}
+
+.author-photo-compact .studio-img{
+  height:118px;
+}
+
+.author-photo-compact .caption{
+  font-size:17px;
+  line-height:1.1;
+}
+
+.author-timeline-wide{
+  background:rgba(255,236,198,.48);
+  border:1px solid rgba(87,61,32,.18);
+  padding:16px 20px;
+  overflow:hidden;
+}
+
+.timeline-strip{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+  margin-top:6px;
+}
+
+.timeline-item{
+  border-left:2px dotted rgba(88,60,29,.35);
+  padding-left:12px;
+}
+
+.timeline-item b{
+  display:block;
+  font-size:15px;
+  color:#7d5426;
+  margin-bottom:5px;
+}
+
+.timeline-item span{
+  display:block;
+  font-size:13px;
+  line-height:1.25;
+}
+
+.author-table-wide{
+  overflow:hidden;
+}
+
+.author-table-wide table{
+  table-layout:fixed;
+  width:100%;
+}
+
+.author-table-wide th,
+.author-table-wide td{
+  font-size:13px;
+  padding:8px 10px;
+  line-height:1.22;
+}
+
+.author-table-wide th:nth-child(1),
+.author-table-wide td:nth-child(1){width:38%;}
+.author-table-wide th:nth-child(2),
+.author-table-wide td:nth-child(2){width:20%;}
+.author-table-wide th:nth-child(3),
+.author-table-wide td:nth-child(3){width:8%;}
+.author-table-wide th:nth-child(4),
+.author-table-wide td:nth-child(4){width:16%;}
+.author-table-wide th:nth-child(5),
+.author-table-wide td:nth-child(5){width:18%;}
+
+/* Hide previous second-page modules if browser keeps any old classes */
+.author-bottom,
+.research-steps,
+.tags{
+  display:none !important;
+}
+
+@media(max-width:1050px){
+  .page{
+    aspect-ratio:auto;
+  }
+  .author-page .content,
+  .author-info-row,
+  .timeline-strip{
+    display:block;
+  }
+  .author-info-row > *,
+  .timeline-item,
+  .author-timeline-wide{
+    margin-bottom:18px;
+  }
+}
+
+
+/* ===== Page 2 overlap fix: compact top area, clear separation ===== */
+.author-page .content{
+  display:grid;
+  grid-template-rows:76px 160px 88px 1fr !important;
+  gap:16px !important;
+  padding:34px 36px 34px !important;
+}
+
+.author-header-clean h2{
+  font-size:42px !important;
+  line-height:1 !important;
+}
+
+.author-header-clean .hand{
+  font-size:20px !important;
+  line-height:1.1 !important;
+}
+
+.author-info-row{
+  display:grid !important;
+  grid-template-columns:1.05fr 1fr 190px !important;
+  gap:18px !important;
+  align-items:start !important;
+  height:160px !important;
+  min-height:0 !important;
+  overflow:visible !important;
+}
+
+.author-about-card{
+  height:160px !important;
+  padding:18px 20px !important;
+  overflow:hidden !important;
+}
+
+.author-about-card p{
+  font-size:15px !important;
+  line-height:1.28 !important;
+  margin-bottom:8px !important;
+}
+
+.author-core-card{
+  height:160px !important;
+  padding:16px 18px !important;
+  overflow:hidden !important;
+}
+
+.author-core-card table{
+  table-layout:fixed !important;
+}
+
+.author-core-card th,
+.author-core-card td{
+  font-size:12px !important;
+  padding:5px 7px !important;
+  line-height:1.15 !important;
+}
+
+.author-core-card tbody tr:nth-child(n+5){
+  display:none !important;
+}
+
+.author-photo-compact{
+  width:190px !important;
+  height:160px !important;
+  padding:8px 8px 22px !important;
+  transform:rotate(2deg) !important;
+  overflow:hidden !important;
+  justify-self:end !important;
+}
+
+.author-photo-compact .studio-img{
+  height:82px !important;
+}
+
+.author-photo-compact .caption{
+  font-size:14px !important;
+  line-height:1.08 !important;
+  margin-top:6px !important;
+}
+
+.author-timeline-wide{
+  height:88px !important;
+  padding:10px 18px !important;
+  overflow:hidden !important;
+  clear:both !important;
+  position:relative !important;
+  z-index:2 !important;
+}
+
+.author-timeline-wide .paper-title{
+  margin-bottom:6px !important;
+}
+
+.timeline-strip{
+  grid-template-columns:repeat(5,1fr) !important;
+  gap:12px !important;
+  margin-top:0 !important;
+}
+
+.timeline-item{
+  padding-left:10px !important;
+}
+
+.timeline-item b{
+  font-size:13px !important;
+  margin-bottom:2px !important;
+}
+
+.timeline-item span{
+  font-size:11px !important;
+  line-height:1.12 !important;
+}
+
+.author-table-wide{
+  position:relative !important;
+  z-index:1 !important;
+  overflow:hidden !important;
+}
+
+.author-table-wide th,
+.author-table-wide td{
+  font-size:12.5px !important;
+  padding:7px 9px !important;
+  line-height:1.2 !important;
+}
+
+.author-table-wide .paper-title{
+  margin-bottom:8px !important;
+}
+
+/* keep signature from covering table a little less */
+body > div[style*="position:fixed"]{
+  transform:scale(.86) rotate(-2deg) !important;
+  transform-origin:right bottom !important;
+}
+
+
+/* ===== Final Page 2 composition fix: fill the full 3:2 canvas ===== */
+.author-page{
+  aspect-ratio:3/2 !important;
+  height:auto !important;
+  min-height:unset !important;
+}
+
+.author-page .content{
+  height:100% !important;
+  display:grid !important;
+  grid-template-rows:70px 150px 92px minmax(0,1fr) !important;
+  gap:14px !important;
+  padding:32px 36px 34px !important;
+  overflow:hidden !important;
+}
+
+.author-header-clean h2{
+  font-size:40px !important;
+  line-height:.98 !important;
+}
+
+.author-header-clean .hand{
+  font-size:19px !important;
+  line-height:1.05 !important;
+}
+
+.author-info-row{
+  height:150px !important;
+  grid-template-columns:1.05fr 1fr 185px !important;
+  gap:18px !important;
+}
+
+.author-about-card{
+  height:150px !important;
+  padding:16px 20px !important;
+}
+
+.author-about-card p{
+  font-size:14.5px !important;
+  line-height:1.24 !important;
+  margin-bottom:7px !important;
+}
+
+.author-core-card{
+  height:150px !important;
+  padding:14px 18px !important;
+}
+
+.author-core-card th,
+.author-core-card td{
+  font-size:11.5px !important;
+  padding:4.5px 7px !important;
+  line-height:1.12 !important;
+}
+
+.author-photo-compact{
+  width:185px !important;
+  height:150px !important;
+  padding:8px 8px 20px !important;
+}
+
+.author-photo-compact .studio-img{
+  height:76px !important;
+}
+
+.author-photo-compact .caption{
+  font-size:13px !important;
+  line-height:1.05 !important;
+}
+
+.author-timeline-wide{
+  height:92px !important;
+  padding:10px 18px !important;
+}
+
+.timeline-strip{
+  gap:12px !important;
+}
+
+.timeline-item b{
+  font-size:12.5px !important;
+}
+
+.timeline-item span{
+  font-size:10.8px !important;
+  line-height:1.08 !important;
+}
+
+.author-table-wide{
+  height:100% !important;
+  min-height:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+}
+
+.author-table-wide .paper-title{
+  flex:0 0 auto !important;
+  margin-bottom:8px !important;
+}
+
+.author-table-wide table{
+  flex:1 1 auto !important;
+  height:100% !important;
+  table-layout:fixed !important;
+}
+
+.author-table-wide thead{
+  height:42px !important;
+}
+
+.author-table-wide tbody tr{
+  height:calc((100% - 42px) / 5) !important;
+}
+
+.author-table-wide th{
+  font-size:12px !important;
+  padding:8px 10px !important;
+}
+
+.author-table-wide td{
+  font-size:13px !important;
+  padding:10px 10px !important;
+  line-height:1.22 !important;
+}
+
+.author-table-wide a{
+  display:inline-block !important;
+  margin-top:4px !important;
+}
+
+/* smaller signature so it does not visually steal the bottom-right area */
+body > div[style*="position:fixed"]{
+  transform:scale(.72) rotate(-2deg) !important;
+  transform-origin:right bottom !important;
+  opacity:.88 !important;
+}
+
+
+/* ===== Page 3 composition fill ===== */
+#references .content{
+  height:100% !important;
+  display:grid !important;
+  grid-template-rows:72px 170px minmax(0,1fr) 110px !important;
+  gap:14px !important;
+  padding:32px 36px 34px !important;
+  overflow:hidden !important;
+}
+
+#references h2{
+  font-size:40px !important;
+  line-height:.98 !important;
+}
+
+#references .hand{
+  font-size:19px !important;
+}
+
+#references .p3-top{
+  grid-template-columns:240px 1fr 220px !important;
+  gap:18px !important;
+}
+
+#references .paper,
+#references .panel{
+  padding:16px 18px !important;
+}
+
+#references .workflow{
+  grid-template-columns:repeat(5,1fr) !important;
+  gap:8px !important;
+}
+
+#references .flow{
+  padding:8px !important;
+}
+
+#references .flow b{
+  font-size:11px !important;
+}
+
+#references .flow span{
+  font-size:10px !important;
+  line-height:1.1 !important;
+}
+
+#references .p3-main{
+  display:grid !important;
+  grid-template-columns:1fr 250px !important;
+  gap:18px !important;
+  min-height:0 !important;
+}
+
+#references table{
+  height:100% !important;
+  table-layout:fixed !important;
+}
+
+#references thead{
+  height:42px !important;
+}
+
+#references tbody tr{
+  height:calc((100% - 42px)/4) !important;
+}
+
+#references th{
+  font-size:12px !important;
+}
+
+#references td{
+  font-size:12.5px !important;
+  line-height:1.18 !important;
+  padding:8px 9px !important;
+}
+
+#references .related{
+  gap:8px !important;
+}
+
+#references .rel{
+  padding:10px !important;
+}
+
+#references .methods{
+  grid-template-columns:repeat(6,1fr) !important;
+  gap:8px !important;
+}
+
+#references .method{
+  padding:8px !important;
+}
+
+#references .method span{
+  font-size:20px !important;
+}
+
+#references .method b{
+  font-size:10px !important;
+}
+
+
+/* ===== Page 3 red-area whitespace fix: move content up and fill header space ===== */
+#references .content{
+  display:grid !important;
+  grid-template-rows:74px 0px minmax(0,1fr) 104px !important;
+  gap:14px !important;
+  padding:30px 36px 32px !important;
+  overflow:hidden !important;
+}
+
+#references .hand{
+  display:none !important;
+}
+
+#references .ref{
+  margin-top:0 !important;
+  display:grid !important;
+  grid-template-columns:300px 1fr !important;
+  gap:22px !important;
+  min-height:0 !important;
+}
+
+#references .paper{
+  height:100% !important;
+  padding:22px 24px !important;
+}
+
+#references .focus-list{
+  gap:22px !important;
+}
+
+#references .focus{
+  grid-template-columns:42px 1fr !important;
+  font-size:17px !important;
+  line-height:1.25 !important;
+}
+
+#references .focus b{
+  font-size:20px !important;
+}
+
+#references table{
+  height:100% !important;
+  table-layout:fixed !important;
+}
+
+#references th{
+  font-size:14px !important;
+  padding:12px !important;
+}
+
+#references td{
+  font-size:15px !important;
+  padding:12px !important;
+  line-height:1.22 !important;
+}
+
+#references tbody tr{
+  height:25% !important;
+}
+
+#references .methods{
+  margin-top:0 !important;
+  height:104px !important;
+  padding:14px 18px !important;
+  display:grid !important;
+  grid-template-columns:repeat(6,1fr) !important;
+  align-items:center !important;
+}
+
+#references .method{
+  font-size:13px !important;
+}
+
+#references .method span{
+  font-size:24px !important;
+}
+
+
+/* ===== Final Page 2: simplified upper section, larger bibliography, 3:2 composition ===== */
+.author-page{
+  aspect-ratio:3/2 !important;
+  min-height:unset !important;
+}
+
+.author-page .content{
+  display:grid !important;
+  grid-template-rows:70px 126px 76px minmax(0,1fr) !important;
+  gap:14px !important;
+  padding:32px 36px 34px !important;
+  overflow:hidden !important;
+}
+
+.author-header-final h2{
+  font-size:40px !important;
+  line-height:1 !important;
+  margin:0 0 4px !important;
+}
+
+.author-header-final .hand{
+  font-size:19px !important;
+  line-height:1.05 !important;
+  margin:0 !important;
+}
+
+.author-info-final{
+  display:grid !important;
+  grid-template-columns:1.12fr 1.1fr 170px !important;
+  gap:18px !important;
+  align-items:stretch !important;
+  min-height:0 !important;
+}
+
+.author-about-final{
+  padding:14px 18px !important;
+  height:126px !important;
+  overflow:hidden !important;
+}
+
+.author-about-final p{
+  font-size:14px !important;
+  line-height:1.22 !important;
+  margin-bottom:6px !important;
+}
+
+.author-core-final{
+  height:126px !important;
+  overflow:hidden !important;
+  background:rgba(255,242,214,.56) !important;
+  border:1px solid rgba(92,60,26,.2) !important;
+  padding:12px 16px !important;
+  box-shadow:0 12px 24px rgba(69,44,18,.09) !important;
+}
+
+.author-core-final table{
+  table-layout:fixed !important;
+}
+
+.author-core-final th,
+.author-core-final td{
+  font-size:11.5px !important;
+  padding:4px 7px !important;
+  line-height:1.08 !important;
+}
+
+.author-photo-final{
+  position:relative !important;
+  width:170px !important;
+  height:126px !important;
+  justify-self:end !important;
+  background:#f2dfbc !important;
+  padding:8px 8px 20px !important;
+  box-shadow:0 12px 24px rgba(59,38,16,.16) !important;
+  transform:rotate(2deg) !important;
+  overflow:hidden !important;
+}
+
+.author-photo-final:before{
+  content:"";
+  position:absolute;
+  top:-9px;
+  left:50%;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:radial-gradient(circle,#d7a64d,#6f4214);
+}
+
+.author-photo-final .studio-img{
+  height:62px !important;
+}
+
+.author-photo-final .caption{
+  font-size:12.5px !important;
+  line-height:1.05 !important;
+  margin-top:5px !important;
+}
+
+.author-timeline-final{
+  height:76px !important;
+  padding:9px 18px !important;
+  background:rgba(255,236,198,.48) !important;
+  border:1px solid rgba(87,61,32,.18) !important;
+  overflow:hidden !important;
+}
+
+.author-timeline-final .paper-title{
+  margin-bottom:5px !important;
+}
+
+.timeline-final-strip{
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  gap:16px !important;
+}
+
+.timeline-final-item{
+  border-left:2px dotted rgba(88,60,29,.35) !important;
+  padding-left:12px !important;
+}
+
+.timeline-final-item b{
+  display:block !important;
+  font-size:12.5px !important;
+  color:#7d5426 !important;
+  margin-bottom:2px !important;
+}
+
+.timeline-final-item span{
+  display:block !important;
+  font-size:11.3px !important;
+  line-height:1.08 !important;
+}
+
+.author-table-final{
+  min-height:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+}
+
+.author-table-final .paper-title{
+  flex:0 0 auto !important;
+  margin-bottom:8px !important;
+}
+
+.author-table-final table{
+  flex:1 1 auto !important;
+  height:100% !important;
+  table-layout:fixed !important;
+}
+
+.author-table-final thead{
+  height:42px !important;
+}
+
+.author-table-final tbody tr{
+  height:calc((100% - 42px)/5) !important;
+}
+
+.author-table-final th{
+  font-size:12px !important;
+  padding:8px 10px !important;
+}
+
+.author-table-final td{
+  font-size:13px !important;
+  padding:10px 10px !important;
+  line-height:1.22 !important;
+}
+
+.author-table-final th:nth-child(1),
+.author-table-final td:nth-child(1){width:38%;}
+.author-table-final th:nth-child(2),
+.author-table-final td:nth-child(2){width:20%;}
+.author-table-final th:nth-child(3),
+.author-table-final td:nth-child(3){width:8%;}
+.author-table-final th:nth-child(4),
+.author-table-final td:nth-child(4){width:16%;}
+.author-table-final th:nth-child(5),
+.author-table-final td:nth-child(5){width:18%;}
+
+.author-bottom,
+.research-steps,
+.tags,
+.author-main,
+.author-top,
+.author-info-row,
+.author-main-clean,
+.author-top-clean{
+  display:none !important;
+}
+
+body > div[style*="position:fixed"]{
+  transform:scale(.72) rotate(-2deg) !important;
+  transform-origin:right bottom !important;
+  opacity:.88 !important;
+}
+
+
+/* Page2 typography enlarged without overflow */
+.author-about-final p{font-size:15.5px!important;line-height:1.22!important;}
+.author-core-final th{font-size:12px!important;}
+.author-core-final td{font-size:12.5px!important;line-height:1.08!important;}
+.author-core-final{padding:12px 15px!important;overflow:hidden!important;}
+.author-photo-final .caption{font-size:13.5px!important;}
+.timeline-final-item b{font-size:13.5px!important;}
+.timeline-final-item span{font-size:12px!important;line-height:1.1!important;}
+.author-table-final th{font-size:13px!important;padding:8px 10px!important;}
+.author-table-final td{font-size:14px!important;line-height:1.18!important;padding:8px 9px!important;vertical-align:top!important;}
+.author-table-final td:first-child{font-size:13.8px!important;}
+.author-table-final a{font-size:13px!important;}
+.author-table-final tbody tr{height:calc((100% - 42px)/5)!important;overflow:hidden!important;}
+
+
+/* Page 2 overflow fix: slightly smaller type + better box heights */
+.author-page .content{
+  grid-template-rows:70px 140px 82px minmax(0,1fr) !important;
+  gap:14px !important;
+}
+
+.author-info-final{
+  grid-template-columns:1.05fr 1.05fr 170px !important;
+}
+
+.author-about-final,
+.author-core-final{
+  height:140px !important;
+  overflow:hidden !important;
+}
+
+.author-about-final{
+  padding:13px 18px !important;
+}
+
+.author-about-final p{
+  font-size:13.8px !important;
+  line-height:1.18 !important;
+  margin-bottom:5px !important;
+}
+
+.author-about-final .paper-title,
+.author-core-final .paper-title,
+.author-timeline-final .paper-title,
+.author-table-final .paper-title{
+  font-size:16px !important;
+  line-height:1 !important;
+  margin-bottom:7px !important;
+}
+
+.author-core-final{
+  padding:12px 15px !important;
+}
+
+.author-core-final table{
+  height:auto !important;
+}
+
+.author-core-final th,
+.author-core-final td{
+  font-size:11.2px !important;
+  line-height:1.05 !important;
+  padding:3.8px 6px !important;
+}
+
+.author-photo-final{
+  height:140px !important;
+}
+
+.author-photo-final .studio-img{
+  height:68px !important;
+}
+
+.author-photo-final .caption{
+  font-size:12px !important;
+  line-height:1.05 !important;
+}
+
+.author-timeline-final{
+  height:82px !important;
+  padding:9px 18px !important;
+}
+
+.timeline-final-item b{
+  font-size:12px !important;
+}
+
+.timeline-final-item span{
+  font-size:10.8px !important;
+  line-height:1.05 !important;
+}
+
+.author-table-final th{
+  font-size:12px !important;
+}
+
+.author-table-final td{
+  font-size:13px !important;
+  line-height:1.16 !important;
+  padding:8px 9px !important;
+}
+
+.author-table-final td:first-child{
+  font-size:12.8px !important;
+}
+
+</style>
+</head>
+<body>
+<div class="archive">
+
+<section class="page" id="overview">
+<aside class="sidebar">
+<div class="logo"></div><div class="brand">PRECEDENT ARCHIVE<small>Research Collection</small></div><div class="rule"></div>
+<nav class="nav">
+<a class="active" href="#overview"><div class="ico">⌕</div><div><div class="num">01</div><div class="label">Overview</div><div class="desc">Project summary<br>& background</div></div></a>
+<a href="#author"><div class="ico">✒</div><div><div class="num">02</div><div class="label">Author</div><div class="desc">Studio & team<br>information</div></div></a>
+<a href="#references"><div class="ico">▤</div><div><div class="num">03</div><div class="label">References</div><div class="desc">Sources &<br>bibliography</div></div></a>
+</nav><div class="note">to investigate is<br>to see clearly<br>what others have<br>chosen not to see.</div>
+</aside>
+<main class="content">
+<div class="clip">⌇</div><div class="stamp">✦</div>
+<div class="hand">Precedent Study Datasheet</div><h1>The Evros / Meriç River</h1><div class="subtitle">A Century of Border Design</div><div class="author">Forensic Architecture</div>
+<div class="grid">
+<div class="paper"><div class="paper-title">Project Overview</div>
+<p>This project traces a century of border design in the Evros / Meriç River region, revealing how infrastructures, policies, and technologies shape the production of borders and human movement.</p>
+<p>It combines investigative research, spatial analysis, and open-source techniques to expose state violence and advocate for human rights.</p>
+<div class="bullets"><div class="bullet"><b>▱</b><span>Combining <mark>architecture, law, journalism,</mark> and the sciences.</span></div><div class="bullet"><b>◉</b><span>Using <mark>open-source</mark> investigations and spatial technologies.</span></div><div class="bullet"><b>♙</b><span>Working with <mark>multidisciplinary teams</mark> and collaborators.</span></div></div>
+</div>
+<div class="map"><div class="river"></div><div class="polaroid"><div class="photo"></div><div class="caption">Evros / Meriç River<br>between Greece and Turkey</div></div></div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Title</th><th>Author</th><th>Year</th><th>Format</th><th>Intended Audience</th></tr></thead><tbody><tr><td>The Evros/Meriç River: A Century of Border Design<br><a href="https://forensic-architecture.org/investigation/the-evros-meric-river-a-century-of-border-design">View Source ↗</a></td><td>Forensis + Forensic Architecture</td><td>2025</td><td>Interactive web platform / Spatial investigation</td><td>Researchers, architects, geographers, NGOs, journalists, policymakers, students, and the general public</td></tr></tbody></table></div>
+</main></section>
+
+<section class="page author-page" id="author">
+<aside class="sidebar">
+  <div class="logo"></div>
+  <div class="brand">PRECEDENT ARCHIVE<small>Research Collection</small></div>
+  <div class="rule"></div>
+  <nav class="nav">
+    <a href="#overview"><div class="ico">⌕</div><div><div class="num">01</div><div class="label">Overview</div><div class="desc">Project summary<br>& background</div></div></a>
+    <a class="active" href="#author"><div class="ico">✒</div><div><div class="num">02</div><div class="label">Author</div><div class="desc">Studio & team<br>information</div></div></a>
+    <a href="#references"><div class="ico">▤</div><div><div class="num">03</div><div class="label">References</div><div class="desc">Sources &<br>bibliography</div></div></a>
+  </nav>
+  <div class="note">Architecture<br>can also<br>be evidence.</div>
+</aside>
+
+<main class="content">
+  <div class="author-header-final">
+    <h2>Author Bibliography</h2>
+    <div class="hand">Page 2 / 3 · Studio & Team Information</div>
+  </div>
+
+  <div class="author-info-final">
+    <div class="paper author-about-final">
+      <div class="paper-title">About Forensic Architecture</div>
+      <p>Forensic Architecture is a multidisciplinary research agency based at Goldsmiths, University of London.</p>
+      <p>It combines architecture, media analysis, and open-source intelligence to investigate human rights violations.</p>
+    </div>
+
+    <div class="author-core-final">
+      <div class="paper-title">Core Team</div>
+      <table>
+        <thead><tr><th>Name</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Eyal Weizman</td><td>Founder & Director</td></tr>
+          <tr><td>Sofia Pantouvaki</td><td>Head of Investigations</td></tr>
+          <tr><td>Alexander Stavropoulos</td><td>Investigations Director</td></tr>
+          <tr><td>Researchers & Collaborators</td><td>Lawyers, journalists, technologists</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="author-photo-final">
+      <div class="studio-img"></div>
+      <div class="caption">Forensic Architecture Studio,<br>London.</div>
+    </div>
+  </div>
+
+  <div class="author-timeline-final">
+    <div class="paper-title">Studio Timeline</div>
+    <div class="timeline-final-strip">
+      <div class="timeline-final-item"><b>2010</b><span>Founded at Goldsmiths.</span></div>
+      <div class="timeline-final-item"><b>2015</b><span>Research methods expand.</span></div>
+      <div class="timeline-final-item"><b>2020</b><span>Open-source investigations become central.</span></div>
+      <div class="timeline-final-item"><b>2025</b><span>Evros/Meriç River project published.</span></div>
+    </div>
+  </div>
+
+  <div class="author-table-final">
+    <div class="paper-title">Author Bibliography</div>
+    <table>
+      <thead>
+        <tr><th>Title</th><th>Author</th><th>Year</th><th>Format</th><th>Publication / Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Evros/Meriç River: A Century of Border Design<br><a href="https://forensic-architecture.org/investigation/the-evros-meric-river-a-century-of-border-design">View Source ↗</a></td>
+          <td>Forensis + Forensic Architecture</td>
+          <td>2025</td>
+          <td>Interactive Investigation</td>
+          <td>Forensic Architecture</td>
+        </tr>
+        <tr>
+          <td>Median Line: A Century of Border Violence and the Alluvial Geopolitics of the Evros/Meriç/Maritsa<br><a href="https://rgs-ibg.onlinelibrary.wiley.com/doi/10.1111/area.12961">View Source ↗</a></td>
+          <td>Ifor Duncan et al.</td>
+          <td>2024</td>
+          <td>Journal Article</td>
+          <td>Area</td>
+        </tr>
+        <tr>
+          <td>Pushbacks Across the Evros/Meriç River: The Case of Parvin<br><a href="https://forensic-architecture.org/investigation/pushbacks-across-the-evros-meric-river-the-case-of-parvin">View Source ↗</a></td>
+          <td>Forensic Architecture</td>
+          <td>2022</td>
+          <td>Investigation Report</td>
+          <td>Forensic Architecture</td>
+        </tr>
+        <tr>
+          <td>Pushbacks Across the Evros/Meriç River: Analysis of Video Evidence<br><a href="https://forensic-architecture.org/investigation/pushbacks-across-the-evros-meric-river-analysis-of-video-evidence">View Source ↗</a></td>
+          <td>Forensic Architecture</td>
+          <td>2020</td>
+          <td>Digital Investigation</td>
+          <td>Forensic Architecture</td>
+        </tr>
+        <tr>
+          <td>Weaponizing a River<br><a href="https://www.e-flux.com/architecture/at-the-border/325751/weaponizing-a-river">View Source ↗</a></td>
+          <td>Ifor Duncan & Stefanos Levidis</td>
+          <td>2020</td>
+          <td>Critical Essay</td>
+          <td>e-flux Architecture</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</section>
+
+<section class="page" id="references">
+<aside class="sidebar"><div class="logo"></div><div class="brand">PRECEDENT ARCHIVE<small>Research Collection</small></div><div class="rule"></div><nav class="nav"><a href="#overview"><div class="ico">⌕</div><div><div class="num">01</div><div class="label">Overview</div><div class="desc">Project summary<br>& background</div></div></a><a href="#author"><div class="ico">✒</div><div><div class="num">02</div><div class="label">Author</div><div class="desc">Studio & team<br>information</div></div></a><a class="active" href="#references"><div class="ico">▤</div><div><div class="num">03</div><div class="label">References</div><div class="desc">Sources &<br>bibliography</div></div></a></nav><div class="note">to investigate is<br>to see clearly<br>what others have<br>chosen not to see.</div></aside>
+<main class="content">
+<div class="clip">⌇</div><h2>Reference Bibliography</h2><div class="hand">Page 3 / 3 · Sources & Bibliography</div>
+<div class="ref"><div class="paper"><div class="paper-title">Research Focus</div><div class="focus-list"><div class="focus"><b>⋇</b><span>State violence and human rights</span></div><div class="focus"><b>▥</b><span>Borders, territories, and infrastructures</span></div><div class="focus"><b>⌁</b><span>Surveillance, technology, and control</span></div><div class="focus"><b>♙</b><span>Environmental justice and mobility</span></div></div></div>
+<table><thead><tr><th>Title</th><th>Author</th><th>Year</th><th>Format</th><th>Publication / Source</th></tr></thead><tbody><tr><td>Infrastructures, Riverscapes, and the Governance of Mobility<br><a href="https://onlinelibrary.wiley.com/doi/10.1111/anti.13129">View Source ↗</a></td><td>Peter Teunissen</td><td>2025</td><td>Journal Article</td><td>Antipode</td></tr><tr><td>Constructing a Defence Line: The Functional Transformation of Evros/Meriç River<br><a href="https://czasopisma.uni.opole.pl/index.php/p/article/view/4562">View Source ↗</a></td><td>Péter Kacziba & Viktor Glied</td><td>2022</td><td>Journal Article</td><td>Border and Regional Studies</td></tr><tr><td>Invisibility at the Border: The Case of Migrants on the Evros/Meriç River<br><a href="https://unitesi.unive.it/handle/20.500.14247/23033">View Source ↗</a></td><td>Serena Spedicato</td><td>2024</td><td>Master's Thesis</td><td>Ca' Foscari University</td></tr><tr><td>Weaponizing a River<br><a href="https://www.e-flux.com/architecture/at-the-border/325751/weaponizing-a-river">View Source ↗</a></td><td>Ifor Duncan & Stefanos Levidis</td><td>2020</td><td>Critical Essay</td><td>e-flux Architecture</td></tr></tbody></table>
+<div class="methods"><div class="method"><span>▧</span>3D Modeling & Photogrammetry</div><div class="method"><span>◈</span>Satellite Imagery & GIS</div><div class="method"><span>▣</span>Video & Image Analysis</div><div class="method"><span>◎</span>Open-source Intelligence</div><div class="method"><span>⌁</span>Data Visualization & Mapping</div><div class="method"><span>✣</span>Spatial & Statistical Analysis</div></div></div>
+</main></section>
+
+</div>
+
+<div style="position:fixed;right:28px;bottom:24px;z-index:99;background:rgba(255,245,220,.78);padding:12px 18px;border:1px solid rgba(120,90,40,.25);box-shadow:0 8px 18px rgba(0,0,0,.08);transform:rotate(-2deg);font-family:'Cormorant Garamond',serif;">
+<div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8b5a22;">Prepared by</div>
+<div style="font-size:28px;font-weight:700;">Yizhang Mu</div>
+<div style="font-family:'Patrick Hand',cursive;font-size:18px;color:#6b5438;">he/him</div>
+</div>
+
+</body>
+</html>
